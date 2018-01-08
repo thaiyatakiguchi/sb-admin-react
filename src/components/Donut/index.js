@@ -84,15 +84,21 @@ class Donut extends Component {
   onPieEnter(data, index) {
     this.setState({
       activeIndex: index,
+      
     });
   }
 
+  // handleClick(e){
+  //   this.setState({activeIndex: e,});
+  // }
+
   render() {
     return (
-      <ResponsiveContainer width="100%" aspect={2} >
+      <ResponsiveContainer width="100%" aspect={1} >
         <PieCharts
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-          onMouseEnter={(data, index) => { this.onPieEnter(data, index); }}
+          //onMouseEnter={(data, index) => { this.onPieEnter(data, index); }}
+          onClick={this.onPieEnter.bind(this)}
         >
           <Pie
             activeIndex={this.state.activeIndex}
@@ -101,6 +107,7 @@ class Donut extends Component {
             innerRadius={this.props.innerRadius}
             outerRadius={this.props.outerRadius}
             fill={this.props.color}
+            
           />
         </PieCharts>
       </ResponsiveContainer>

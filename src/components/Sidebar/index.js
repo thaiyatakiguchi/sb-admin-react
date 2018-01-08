@@ -8,6 +8,7 @@ class Sidebar extends Component {
     super(props);
     this.state = {
       uiElementsCollapsed: true,
+      analyticChartCollapsed: true,
       chartsElementsCollapsed: true,
       multiLevelDropdownCollapsed: true,
       thirdLevelDropdownCollapsed: true,
@@ -35,6 +36,47 @@ class Sidebar extends Component {
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/'); }} >
                 <i className="fa fa-dashboard fa-fw" /> &nbsp;Dashboard
               </a>
+            </li>
+
+            <li className={classNames({active: !this.state.analyticChartCollapsed })}>
+              <a href="" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({analyticChartCollapsed: !this.state.analyticChartCollapsed });
+                  return false;
+                }
+              }
+              >
+              <i className="fa fa-bar-chart-o fa-fw" /> &nbsp;Analytic Charts
+              <span className="fa arrow" />
+              </a>
+              <ul 
+                className={
+                  classNames({
+                    'nav nav-second-level': true,
+                    collapse: this.state.analyticChartCollapsed,
+                  })
+                }
+              >
+                <li>
+                  <a href="" onClick={(e) => {
+                      e.preventDefault();
+                      history.push('/frequencyAnalytic');
+                    }
+                  }>
+                  Frequency Analytic
+                  </a>
+                </li>
+                <li>
+                  <a href="" onClick={(e) => {
+                      e.preventDefault();
+                      history.push('/associateAnalytic');
+                    }
+                  }>
+                  Associate Analytic
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li className={classNames({ active: !this.state.chartsElementsCollapsed })}>
