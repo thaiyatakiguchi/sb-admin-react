@@ -116,7 +116,7 @@ module.exports =
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _assets = __webpack_require__(193);
+  var _assets = __webpack_require__(196);
   
   var _assets2 = _interopRequireDefault(_assets);
   
@@ -133,6 +133,7 @@ module.exports =
   // user agent is not known.
   // -----------------------------------------------------------------------------
   // eslint-disable-line import/no-unresolved
+  // import services from './services/frequencyService';
   
   // import passport from './core/passport';
   // import models from './data/models';
@@ -967,11 +968,11 @@ module.exports =
   
   var _frequencyAnalyticFolder2 = _interopRequireDefault(_frequencyAnalyticFolder);
   
-  var _associateAnalytic = __webpack_require__(190);
+  var _associateAnalytic = __webpack_require__(193);
   
   var _associateAnalytic2 = _interopRequireDefault(_associateAnalytic);
   
-  var _error = __webpack_require__(192);
+  var _error = __webpack_require__(195);
   
   var _error2 = _interopRequireDefault(_error);
   
@@ -1131,7 +1132,7 @@ module.exports =
       }))();
     }
   }];
-  
+  // import Service from '../services/frequencyService';
   // Child routes
   
   /**
@@ -3157,7 +3158,7 @@ module.exports =
       value: function render() {
         return _react2.default.createElement(
           _ResponsiveContainer2.default,
-          { width: '100%', aspect: 1 },
+          { width: '100%', aspect: 2 },
           _react2.default.createElement(
             _PieChart2.default,
             {
@@ -29801,9 +29802,19 @@ module.exports =
   
   var _Donut2 = _interopRequireDefault(_Donut);
   
+  var _frequencyForm = __webpack_require__(191);
+  
+  var _frequencyForm2 = _interopRequireDefault(_frequencyForm);
+  
+  var _frequencyLineChart = __webpack_require__(192);
+  
+  var _frequencyLineChart2 = _interopRequireDefault(_frequencyLineChart);
+  
   var _recharts = __webpack_require__(100);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  // import FrequencyService from '../../services/frequencyService';
   
   var style = {
     textAlign: 'right'
@@ -29814,7 +29825,7 @@ module.exports =
   
   var data = [{ name: 'Jan 1', abac: 4000, amt: 2400, value: 600 }, { name: 'Jan 2', abac: 3000, amt: 2210, value: 300 }, { name: 'Jan 3', abac: 2000, amt: 2290, value: 500 }, { name: 'Jan 4', abac: 2780, amt: 2000, value: 400 }, { name: 'Jan 5', abac: 1890, amt: 2181, value: 200 }, { name: 'Jan 6', abac: 2390, amt: 2500, value: 700 }, { name: 'Jan 7', abac: 3490, amt: 2100, value: 100 }, { name: 'Jan 8', abac: 4000, amt: 2400, value: 600 }, { name: 'Jan 9', abac: 3000, amt: 2210, value: 300 }, { name: 'Jan 10', abac: 2000, amt: 2290, value: 500 }, { name: 'Jan 11', abac: 2780, amt: 2000, value: 400 }, { name: 'Jan 12', abac: 890, amt: 2181, value: 200 }, { name: 'Jan 13', abac: 390, amt: 2500, value: 700 }, { name: 'Jan 14', abac: 3490, amt: 2100, value: 100 }];
   
-  var pieData = [{ name: 'Facebook', abac: 4000, amt: 2400, value: 2300 }, { name: 'Twitter', abac: 4000, amt: 2400, value: 600 }, { name: 'Pantip', abac: 4000, amt: 2400, value: 510 }, { name: 'Others', abac: 4000, amt: 2400, value: 118 }];
+  var pieData = [{ name: 'Facebook', abac: 4000, amt: 2400, value: 1500 }, { name: 'Twitter', abac: 4000, amt: 2400, value: 600 }, { name: 'Pantip', abac: 4000, amt: 2400, value: 510 }, { name: 'Others', abac: 4000, amt: 2400, value: 118 }];
   
   function FrequencyAnalytic(props, context) {
     context.setTitle(title);
@@ -29840,50 +29851,7 @@ module.exports =
         _react2.default.createElement(
           'div',
           { className: 'col-lg-12 col-md-12' },
-          _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { header: _react2.default.createElement(
-                'span',
-                null,
-                'Frequence Form'
-              ) },
-            _react2.default.createElement(
-              _reactBootstrap.Form,
-              null,
-              _react2.default.createElement(
-                'div',
-                { className: 'row' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'col-lg-offset-3 col-lg-6' },
-                  _react2.default.createElement(
-                    _reactBootstrap.FormGroup,
-                    {
-                      controlId: 'formBasicText'
-                    },
-                    _react2.default.createElement(
-                      _reactBootstrap.ControlLabel,
-                      null,
-                      'See how often you have been talked about'
-                    ),
-                    _react2.default.createElement(_reactBootstrap.FormControl, {
-                      type: 'text',
-                      placeholder: 'input keyword'
-                    })
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.FormGroup,
-                    null,
-                    _react2.default.createElement(
-                      _reactBootstrap.Button,
-                      { bsStyle: 'primary', width: '100%', type: 'submit' },
-                      'Search '
-                    )
-                  )
-                )
-              )
-            )
-          )
+          _react2.default.createElement(_frequencyForm2.default, null)
         )
       ),
       _react2.default.createElement(
@@ -29891,72 +29859,14 @@ module.exports =
         { className: 'row' },
         _react2.default.createElement(
           'div',
-          { className: 'col-lg-9' },
+          { className: 'col-lg-8' },
           _react2.default.createElement(
             'div',
             { className: 'row' },
             _react2.default.createElement(
               'div',
               { className: 'col-md-12' },
-              _react2.default.createElement(
-                _reactBootstrap.Panel,
-                {
-                  header: _react2.default.createElement(
-                    'span',
-                    null,
-                    _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-                    ' Analysis Graph',
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'pull-right' },
-                      _react2.default.createElement(
-                        _reactBootstrap.DropdownButton,
-                        { title: 'Filter', bsSize: 'xs', pullRight: true, id: 'dropdownButton2' },
-                        _react2.default.createElement(
-                          _reactBootstrap.MenuItem,
-                          { eventKey: '1' },
-                          'Week'
-                        ),
-                        _react2.default.createElement(
-                          _reactBootstrap.MenuItem,
-                          { eventKey: '2' },
-                          '2 Weeks'
-                        ),
-                        _react2.default.createElement(
-                          _reactBootstrap.MenuItem,
-                          { eventKey: '3' },
-                          '3 Weeks'
-                        ),
-                        _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-                        _react2.default.createElement(
-                          _reactBootstrap.MenuItem,
-                          { eventKey: '4' },
-                          'Custom'
-                        )
-                      )
-                    )
-                  )
-                },
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(
-                    _recharts.ResponsiveContainer,
-                    { width: '100%', aspect: 2 },
-                    _react2.default.createElement(
-                      _recharts.AreaChart,
-                      { data: data, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
-                      _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
-                      _react2.default.createElement(_recharts.YAxis, null),
-                      _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
-                      _react2.default.createElement(_recharts.Tooltip, null),
-                      _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'abac', stackId: '1', stroke: '#8884d8', fill: '#8884d8' }),
-                      _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'amt', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d' }),
-                      _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'value', stackId: '1', stroke: '#ffc658', fill: '#ffc658' })
-                    )
-                  )
-                )
-              ),
+              _react2.default.createElement(_frequencyLineChart2.default, null),
               _react2.default.createElement(
                 _reactBootstrap.Panel,
                 { header: _react2.default.createElement(
@@ -30457,7 +30367,7 @@ module.exports =
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-lg-3' },
+          { className: 'col-lg-4' },
           _react2.default.createElement(
             'div',
             { className: 'row' },
@@ -30656,13 +30566,16 @@ module.exports =
   
   var _Sector2 = _interopRequireDefault(_Sector);
   
+  var _frequencyService = __webpack_require__(190);
+  
+  var _frequencyService2 = _interopRequireDefault(_frequencyService);
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
   // import BarChart from '../../vendor/recharts/lib/chart/BarChart';
   // import ResponsiveContainer from '../../vendor/recharts/lib/component/ResponsiveContainer';
-  
-  // import { PieCharts, Pie, Sector, ResponsiveContainer } from '../../vendor/recharts';
   var data = [{ name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 }, { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, value: 300 }, { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, value: 500 }, { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, value: 400 }, { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, value: 200 }, { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 }, { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 }];
+  // import { PieCharts, Pie, Sector, ResponsiveContainer } from '../../vendor/recharts';
   
   var BarComp = function (_Component) {
     (0, _inherits3.default)(BarComp, _Component);
@@ -30687,7 +30600,12 @@ module.exports =
   
         });
       }
-  
+    }, {
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        console.log('component did mount');
+        (0, _frequencyService2.default)();
+      }
       // handleClick(e){
       //   this.setState({activeIndex: e,});
       // }
@@ -30732,6 +30650,316 @@ module.exports =
   'use strict';
   
   Object.defineProperty(exports, "__esModule", {
+      value: true
+  });
+  exports.default = getConfidentialValue;
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _history = __webpack_require__(40);
+  
+  var _history2 = _interopRequireDefault(_history);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  function getConfidentialValue(keyword) {
+      // var keyword = 'abac';
+      var url = 'http://174.138.26.245:5003/Thai_segment/' + keyword;
+  
+      fetch(url).then(function (resp) {
+          return resp.json();
+      }).then(function (data) {
+          console.log('result');
+          var result = data;
+          console.log(result, 'Result data');
+      }).then(function () {
+          return _history2.default.push('/frequencyAnalytic');
+      }).catch(function (error) {
+          console.log(error);
+      });
+  }
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+      value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _frequencyService = __webpack_require__(190);
+  
+  var _frequencyService2 = _interopRequireDefault(_frequencyService);
+  
+  var _FormControlFeedback = __webpack_require__(165);
+  
+  var _FormControlFeedback2 = _interopRequireDefault(_FormControlFeedback);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var FrequencyFormComp = function (_Component) {
+      (0, _inherits3.default)(FrequencyFormComp, _Component);
+  
+      function FrequencyFormComp(props) {
+          (0, _classCallCheck3.default)(this, FrequencyFormComp);
+  
+          var _this = (0, _possibleConstructorReturn3.default)(this, (FrequencyFormComp.__proto__ || (0, _getPrototypeOf2.default)(FrequencyFormComp)).call(this, props));
+  
+          _this.setKeyWord = function (e) {
+              _this.setState({
+                  keyword: e.target.value
+              });
+          };
+  
+          console.log(_this.props, "constructor");
+          _this.state = {
+              keyword: '',
+              keyWordErrorText: '',
+              isDisabled: true
+          };
+          return _this;
+      }
+  
+      (0, _createClass3.default)(FrequencyFormComp, [{
+          key: 'componentDidMount',
+          value: function componentDidMount() {
+              (0, _frequencyService2.default)();
+              // this.getConfidentialValue();
+          }
+      }, {
+          key: 'submitKeyword',
+          value: function submitKeyword(e, val) {
+              (0, _frequencyService2.default)(this.state.keyword);
+          }
+      }, {
+          key: 'render',
+          value: function render() {
+              return _react2.default.createElement(
+                  _reactBootstrap.Panel,
+                  { header: _react2.default.createElement(
+                          'span',
+                          null,
+                          'Frequence Form'
+                      ) },
+                  _react2.default.createElement(
+                      _reactBootstrap.Form,
+                      null,
+                      _react2.default.createElement(
+                          'div',
+                          { className: 'row' },
+                          _react2.default.createElement(
+                              'div',
+                              { className: 'col-lg-offset-3 col-lg-6' },
+                              _react2.default.createElement(
+                                  _reactBootstrap.FormGroup,
+                                  {
+                                      controlId: 'keywordTxt'
+  
+                                  },
+                                  _react2.default.createElement(
+                                      _reactBootstrap.ControlLabel,
+                                      null,
+                                      'See how often you have been talked about'
+                                  ),
+                                  _react2.default.createElement(_reactBootstrap.FormControl, {
+                                      itemID: 'frequencyTxt',
+                                      type: 'text',
+                                      placeholder: 'input keyword',
+                                      name: 'keyword',
+                                      onChange: this.setKeyWord
+                                  }),
+                                  _react2.default.createElement(_FormControlFeedback2.default, null)
+                              ),
+                              _react2.default.createElement(
+                                  _reactBootstrap.FormGroup,
+                                  null,
+                                  _react2.default.createElement(
+                                      _reactBootstrap.Button,
+                                      { bsStyle: 'primary', width: '100%', type: 'button', onClick: this.submitKeyword.bind(this) },
+                                      'Search '
+                                  )
+                              )
+                          )
+                      )
+                  )
+              );
+          }
+      }]);
+      return FrequencyFormComp;
+  }(_react.Component);
+  
+  exports.default = FrequencyFormComp;
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+      value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _Widget = __webpack_require__(52);
+  
+  var _Widget2 = _interopRequireDefault(_Widget);
+  
+  var _recharts = __webpack_require__(100);
+  
+  var _frequencyService = __webpack_require__(190);
+  
+  var _frequencyService2 = _interopRequireDefault(_frequencyService);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var data = [{ name: 'Jan 1', abac: 4000, amt: 2400, value: 600 }, { name: 'Jan 2', abac: 3000, amt: 2210, value: 300 }, { name: 'Jan 3', abac: 2000, amt: 2290, value: 500 }, { name: 'Jan 4', abac: 2780, amt: 2000, value: 400 }, { name: 'Jan 5', abac: 1890, amt: 2181, value: 200 }, { name: 'Jan 6', abac: 2390, amt: 2500, value: 700 }, { name: 'Jan 7', abac: 3490, amt: 2100, value: 100 }, { name: 'Jan 8', abac: 4000, amt: 2400, value: 600 }, { name: 'Jan 9', abac: 3000, amt: 2210, value: 300 }, { name: 'Jan 10', abac: 2000, amt: 2290, value: 500 }, { name: 'Jan 11', abac: 2780, amt: 2000, value: 400 }, { name: 'Jan 12', abac: 890, amt: 2181, value: 200 }, { name: 'Jan 13', abac: 390, amt: 2500, value: 700 }, { name: 'Jan 14', abac: 3490, amt: 2100, value: 100 }];
+  
+  var FrequencyLineChartComp = function (_Component) {
+      (0, _inherits3.default)(FrequencyLineChartComp, _Component);
+  
+      function FrequencyLineChartComp() {
+          (0, _classCallCheck3.default)(this, FrequencyLineChartComp);
+          return (0, _possibleConstructorReturn3.default)(this, (FrequencyLineChartComp.__proto__ || (0, _getPrototypeOf2.default)(FrequencyLineChartComp)).apply(this, arguments));
+      }
+  
+      (0, _createClass3.default)(FrequencyLineChartComp, [{
+          key: 'render',
+  
+          //   componentDidMount(){
+          //     console.log('component did mount')
+          //     getConfidentialValue();
+          //   }
+  
+          value: function render() {
+              return _react2.default.createElement(
+                  _reactBootstrap.Panel,
+                  {
+                      header: _react2.default.createElement(
+                          'span',
+                          null,
+                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+                          ' Analysis Graph',
+                          _react2.default.createElement(
+                              'div',
+                              { className: 'pull-right' },
+                              _react2.default.createElement(
+                                  _reactBootstrap.DropdownButton,
+                                  { title: 'Filter', bsSize: 'xs', pullRight: true, id: 'dropdownButton2' },
+                                  _react2.default.createElement(
+                                      _reactBootstrap.MenuItem,
+                                      { eventKey: '1' },
+                                      'Week'
+                                  ),
+                                  _react2.default.createElement(
+                                      _reactBootstrap.MenuItem,
+                                      { eventKey: '2' },
+                                      '2 Weeks'
+                                  ),
+                                  _react2.default.createElement(
+                                      _reactBootstrap.MenuItem,
+                                      { eventKey: '3' },
+                                      '3 Weeks'
+                                  ),
+                                  _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
+                                  _react2.default.createElement(
+                                      _reactBootstrap.MenuItem,
+                                      { eventKey: '4' },
+                                      'Custom'
+                                  )
+                              )
+                          )
+                      )
+                  },
+                  _react2.default.createElement(
+                      'div',
+                      null,
+                      _react2.default.createElement(
+                          _recharts.ResponsiveContainer,
+                          { width: '100%', aspect: 2 },
+                          _react2.default.createElement(
+                              _recharts.AreaChart,
+                              { data: data, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                              _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                              _react2.default.createElement(_recharts.YAxis, null),
+                              _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                              _react2.default.createElement(_recharts.Tooltip, null),
+                              _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'abac', stackId: '1', stroke: '#8884d8', fill: '#8884d8' }),
+                              _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'amt', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d' }),
+                              _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'value', stackId: '1', stroke: '#ffc658', fill: '#ffc658' })
+                          )
+                      )
+                  )
+              );
+          }
+      }]);
+      return FrequencyLineChartComp;
+  }(_react.Component);
+  
+  exports.default = FrequencyLineChartComp;
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
   
@@ -30739,7 +30967,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _associatePage = __webpack_require__(191);
+  var _associatePage = __webpack_require__(194);
   
   var _associatePage2 = _interopRequireDefault(_associatePage);
   
@@ -30756,7 +30984,7 @@ module.exports =
   };
 
 /***/ }),
-/* 191 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -30786,6 +31014,11 @@ module.exports =
   var _recharts = __webpack_require__(100);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var style = {
+      textAlign: 'center',
+      marginTop: '25px'
+  };
   
   var title = 'Sb Admin React';
   
@@ -30832,7 +31065,7 @@ module.exports =
                               { className: 'row' },
                               _react2.default.createElement(
                                   'div',
-                                  { className: 'col-lg-offset-3 col-lg-6' },
+                                  { className: 'col-lg-offset-1 col-lg-3' },
                                   _react2.default.createElement(
                                       _reactBootstrap.FormGroup,
                                       {
@@ -30845,8 +31078,81 @@ module.exports =
                                       ),
                                       _react2.default.createElement(_reactBootstrap.FormControl, {
                                           type: 'text',
-                                          placeholder: 'input keyword'
+                                          placeholder: 'input keyword',
+                                          required: true
                                       })
+                                  )
+                              ),
+                              _react2.default.createElement(
+                                  'div',
+                                  { className: 'col-lg-1', style: style },
+                                  _react2.default.createElement(
+                                      _reactBootstrap.ControlLabel,
+                                      null,
+                                      _react2.default.createElement('span', { className: 'fa fa-exchange' })
+                                  )
+                              ),
+                              _react2.default.createElement(
+                                  'div',
+                                  { className: 'col-lg-3' },
+                                  _react2.default.createElement(
+                                      _reactBootstrap.FormGroup,
+                                      {
+                                          controlId: 'formBasicText'
+                                      },
+                                      _react2.default.createElement(
+                                          _reactBootstrap.ControlLabel,
+                                          null,
+                                          'Association'
+                                      ),
+                                      _react2.default.createElement(_reactBootstrap.FormControl, {
+                                          type: 'text',
+                                          placeholder: 'input keyword',
+                                          readOnly: true,
+                                          required: true
+                                      })
+                                  )
+                              ),
+                              _react2.default.createElement(
+                                  'div',
+                                  { className: 'col-lg-3' },
+                                  _react2.default.createElement(
+                                      _reactBootstrap.FormGroup,
+                                      { controlId: 'formControlsSelectMultiple' },
+                                      _react2.default.createElement(
+                                          _reactBootstrap.ControlLabel,
+                                          null,
+                                          'Select correlation'
+                                      ),
+                                      _react2.default.createElement(
+                                          _reactBootstrap.FormControl,
+                                          { componentClass: 'select', multiple: true },
+                                          _react2.default.createElement(
+                                              'option',
+                                              { value: '1' },
+                                              '1'
+                                          ),
+                                          _react2.default.createElement(
+                                              'option',
+                                              { value: '2' },
+                                              '2'
+                                          ),
+                                          _react2.default.createElement(
+                                              'option',
+                                              { value: '3' },
+                                              '3'
+                                          ),
+                                          _react2.default.createElement(
+                                              'option',
+                                              { value: '4' },
+                                              '4'
+                                          ),
+                                          _react2.default.createElement(
+                                              'option',
+                                              { value: '5' },
+                                              '5'
+                                          )
+                                      )
                                   ),
                                   _react2.default.createElement(
                                       _reactBootstrap.FormGroup,
@@ -30855,8 +31161,49 @@ module.exports =
                                           _reactBootstrap.Button,
                                           { bsStyle: 'primary', width: '100%', type: 'submit' },
                                           'Search '
+                                      ),
+                                      '  ',
+                                      _react2.default.createElement(
+                                          _reactBootstrap.Button,
+                                          { type: 'reset' },
+                                          'Reset Button'
                                       )
                                   )
+                              )
+                          )
+                      )
+                  )
+              )
+          ),
+          _react2.default.createElement(
+              'div',
+              { className: 'row' },
+              _react2.default.createElement(
+                  'div',
+                  { className: 'col-lg-12' },
+                  _react2.default.createElement(
+                      _reactBootstrap.Panel,
+                      { header: _react2.default.createElement(
+                              'span',
+                              null,
+                              'Associate Chart'
+                          ) },
+                      _react2.default.createElement(
+                          'div',
+                          null,
+                          _react2.default.createElement(
+                              _recharts.ResponsiveContainer,
+                              { width: '100%', aspect: 4 },
+                              _react2.default.createElement(
+                                  _recharts.LineChart,
+                                  { data: data, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                                  _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                                  _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                                  _react2.default.createElement(_recharts.YAxis, null),
+                                  _react2.default.createElement(_recharts.Tooltip, null),
+                                  _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'abac', stroke: '#8884d8' }),
+                                  _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'value', stroke: '#82ca9d' }),
+                                  _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'amt', stroke: '#ffc658' })
                               )
                           )
                       )
@@ -30871,7 +31218,7 @@ module.exports =
   exports.default = AssociateAnalytic;
 
 /***/ }),
-/* 192 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -30920,7 +31267,7 @@ module.exports =
       */
 
 /***/ }),
-/* 193 */
+/* 196 */
 /***/ (function(module, exports) {
 
   module.exports = require("./assets");

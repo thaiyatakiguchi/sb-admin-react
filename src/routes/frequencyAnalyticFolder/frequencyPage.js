@@ -21,7 +21,10 @@ import {
 
 import StatWidget from '../../components/Widget';
 import BarComp from '../../components/FrequencyComp';
-import Donut from '../../components/Donut'
+import Donut from '../../components/Donut';
+import FrequencyFormComp from '../../components/FrequencyComp/frequencyForm';
+import FrequencyLineChartComp from '../../components/FrequencyComp/frequencyLineChart';
+// import FrequencyService from '../../services/frequencyService';
 
 const style ={
   textAlign : 'right'
@@ -52,7 +55,7 @@ import {
   ];
 
   const pieData =[
-    { name: 'Facebook', abac: 4000,  amt: 2400, value: 2300,},
+    { name: 'Facebook', abac: 4000,  amt: 2400, value: 1500,},
     { name: 'Twitter', abac: 4000,  amt: 2400, value: 600,},
     { name: 'Pantip', abac: 4000,  amt: 2400, value: 510,},
     { name: 'Others', abac: 4000,  amt: 2400, value: 118,},
@@ -70,62 +73,15 @@ import {
   
         <div className="row">
           <div className="col-lg-12 col-md-12">
-            <Panel header={<span>Frequence Form</span>}>
-              <Form>
-              <div className="row">
-                <div className="col-lg-offset-3 col-lg-6">
-                  <FormGroup
-                    controlId="formBasicText"
-                  >
-                    <ControlLabel>See how often you have been talked about</ControlLabel>
-                    <FormControl
-                      type="text"
-                      placeholder="input keyword"
-                    />
-                  </FormGroup>
-                  <FormGroup >
-                    <Button bsStyle="primary" width="100%" type="submit" >Search </Button>
-                  </FormGroup>
-                </div>
-              </div>
-              </Form>
-            </Panel>
+            <FrequencyFormComp  />
           </div>
         </div>
 
         <div className="row">
-          <div className="col-lg-9">
+          <div className="col-lg-8">
             <div className="row">
               <div className="col-md-12">
-                <Panel
-                  header={<span>
-                    <i className="fa fa-bar-chart-o fa-fw" /> Analysis Graph
-                    <div className="pull-right">
-                      <DropdownButton title="Filter" bsSize="xs" pullRight id="dropdownButton2">
-                        <MenuItem eventKey="1">Week</MenuItem>
-                        <MenuItem eventKey="2">2 Weeks</MenuItem>
-                        <MenuItem eventKey="3">3 Weeks</MenuItem>
-                        <MenuItem divider />
-                        <MenuItem eventKey="4">Custom</MenuItem>
-                      </DropdownButton>
-                    </div>
-                  </span>}
-                >
-                  <div>
-                  <ResponsiveContainer width="100%" aspect={2}>
-                  <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }} >
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <CartesianGrid stroke="#ccc" />
-                    <Tooltip />
-                    <Area type="monotone" dataKey="abac" stackId="1" stroke="#8884d8" fill="#8884d8" />
-                    <Area type="monotone" dataKey="amt" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
-                    <Area type="monotone" dataKey="value" stackId="1" stroke="#ffc658" fill="#ffc658" />
-                  </AreaChart>
-                </ResponsiveContainer>
-                  </div>
-                </Panel>
-                
+                <FrequencyLineChartComp />
                 {/* Data Grid */}
                 <Panel header={<span>Data Table</span>} >
                   <div>
@@ -334,7 +290,7 @@ import {
               </div>
             </div>
           </div>
-          <div className="col-lg-3">
+          <div className="col-lg-4">
             <div className="row">
               <div className="col-md-12">
                 <Panel header={<span>Sources</span>} >
@@ -393,16 +349,16 @@ import {
           </div>
         </div>
         
-          {/*  Calling component from BarComp
-          <div className="col-lg-8">
+          
+          {/* <div className="col-lg-8">
             <Panel header={<span>Donut Chart Example</span>} >
               <div>
                 <BarComp  />
               </div>
             </Panel>
-          </div> 
-        </div>*/}
-      {/* Close Main div */}
+          </div>  */}
+        
+      
       </div>
     );
 }

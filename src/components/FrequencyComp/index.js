@@ -6,6 +6,8 @@ import {
     CartesianGrid, AreaChart, Bar, BarChart,
     ResponsiveContainer } from '../../vendor/recharts';
 import Sector from '../../vendor/recharts/lib/shape/Sector';
+import getConfidentialValue from '../../services/frequencyService';
+
 // import BarChart from '../../vendor/recharts/lib/chart/BarChart';
 // import ResponsiveContainer from '../../vendor/recharts/lib/component/ResponsiveContainer';
 const data = [
@@ -46,6 +48,10 @@ class BarComp extends Component {
     });
   }
 
+  componentDidMount(){
+    console.log('component did mount')
+    getConfidentialValue();
+  }
   // handleClick(e){
   //   this.setState({activeIndex: e,});
   // }

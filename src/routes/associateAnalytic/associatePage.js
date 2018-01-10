@@ -16,6 +16,7 @@ import {
   Form,
   Radio,
   InputGroup,
+  InputGroupAddon,
   Pagination,
 } from 'react-bootstrap';
 
@@ -28,7 +29,12 @@ import {
     XAxis, YAxis, Area,
     CartesianGrid, AreaChart, Bar, BarChart, Line ,LineChart,
     ResponsiveContainer } from '../../vendor/recharts';
-  
+
+const style ={
+    textAlign : 'center',
+    marginTop : '25px'
+    };
+
   const title = 'Sb Admin React';
   
   const data = [
@@ -70,7 +76,7 @@ function AssociateAnalytic(props, context) {
                     <Panel header={<span>Associate Form</span>}>
                         <Form>
                         <div className="row">
-                            <div className="col-lg-offset-3 col-lg-6">
+                            <div className="col-lg-offset-1 col-lg-3">
                             <FormGroup
                                 controlId="formBasicText"
                             >
@@ -78,15 +84,66 @@ function AssociateAnalytic(props, context) {
                                 <FormControl
                                 type="text"
                                 placeholder="input keyword"
+                                required
                                 />
+                            </FormGroup>
+                            </div>
+                            <div className="col-lg-1" style={style}>
+                            <ControlLabel><span className="fa fa-exchange"  ></span></ControlLabel>
+                            </div>
+                            <div className="col-lg-3">
+                            <FormGroup
+                                controlId="formBasicText"
+                            >
+                                <ControlLabel>Association</ControlLabel>
+                                <FormControl
+                                type="text"
+                                placeholder="input keyword"
+                                readOnly
+                                required
+                                />
+                                
+                            </FormGroup>
+                            </div>
+                            <div className="col-lg-3">
+                            <FormGroup controlId="formControlsSelectMultiple">
+                                <ControlLabel>Select correlation</ControlLabel>
+                                <FormControl componentClass="select" multiple>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                </FormControl>
                             </FormGroup>
                             <FormGroup >
                                 <Button bsStyle="primary" width="100%" type="submit" >Search </Button>
+                                {'  '}
+                                <Button type="reset">Reset Button</Button>
                             </FormGroup>
                             </div>
                         </div>
                         </Form>
                     </Panel>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-12">
+                <Panel header={<span>Associate Chart</span>} >
+                    <div>
+                    <ResponsiveContainer width="100%" aspect={4}>
+                        <LineChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                        <CartesianGrid stroke="#ccc" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Line type="monotone" dataKey="abac" stroke="#8884d8" />
+                        <Line type="monotone" dataKey="value" stroke="#82ca9d" />
+                        <Line type="monotone" dataKey="amt" stroke="#ffc658" />
+                        </LineChart>
+                    </ResponsiveContainer>
+                    </div>
+                </Panel>
                 </div>
             </div>
         </div>
