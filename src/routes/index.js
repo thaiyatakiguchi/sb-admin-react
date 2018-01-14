@@ -9,8 +9,9 @@
 
 import React from 'react';
 import App from '../components/App';
-
+// import Service from '../services/frequencyService';
 // Child routes
+
 import home from './home';
 import login from './login';
 import table from './dashboardPages/tables';
@@ -24,7 +25,12 @@ import notification from './dashboardPages/notification';
 import panelwells from './dashboardPages/panelWells';
 import typography from './dashboardPages/typography';
 import blank from './dashboardPages/blank';
+//import from folder
+import frequencyanalytic from './frequencyAnalyticFolder';
+import associateanalytic from './associateAnalytic';
+
 import error from './error';
+
 
 import Header from '../components/Header';
 
@@ -64,7 +70,8 @@ export default [
       typography,
       // register,
       blank,
-
+      frequencyanalytic,
+      associateanalytic,
       // place new routes before...
       // content,
       error,
