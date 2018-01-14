@@ -116,7 +116,7 @@ module.exports =
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _assets = __webpack_require__(196);
+  var _assets = __webpack_require__(197);
   
   var _assets2 = _interopRequireDefault(_assets);
   
@@ -968,11 +968,11 @@ module.exports =
   
   var _frequencyAnalyticFolder2 = _interopRequireDefault(_frequencyAnalyticFolder);
   
-  var _associateAnalytic = __webpack_require__(193);
+  var _associateAnalytic = __webpack_require__(194);
   
   var _associateAnalytic2 = _interopRequireDefault(_associateAnalytic);
   
-  var _error = __webpack_require__(195);
+  var _error = __webpack_require__(196);
   
   var _error2 = _interopRequireDefault(_error);
   
@@ -29810,6 +29810,10 @@ module.exports =
   
   var _frequencyLineChart2 = _interopRequireDefault(_frequencyLineChart);
   
+  var _frequencyTable = __webpack_require__(193);
+  
+  var _frequencyTable2 = _interopRequireDefault(_frequencyTable);
+  
   var _recharts = __webpack_require__(100);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -29867,501 +29871,7 @@ module.exports =
               'div',
               { className: 'col-md-12' },
               _react2.default.createElement(_frequencyLineChart2.default, null),
-              _react2.default.createElement(
-                _reactBootstrap.Panel,
-                { header: _react2.default.createElement(
-                    'span',
-                    null,
-                    'Data Table'
-                  ) },
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'dataTable_wrapper' },
-                    _react2.default.createElement(
-                      'div',
-                      {
-                        id: 'dataTables-example_wrapper',
-                        className: 'dataTables_wrapper form-inline dt-bootstrap no-footer'
-                      },
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                          'div',
-                          { className: 'col-sm-9' },
-                          _react2.default.createElement(
-                            'div',
-                            { className: 'dataTables_length', id: 'dataTables-example_length' },
-                            _react2.default.createElement(
-                              'label',
-                              { htmlFor: 'show' },
-                              ' Show',
-                              _react2.default.createElement(
-                                'select',
-                                {
-                                  name: 'dataTables-example_length',
-                                  'aria-controls': 'dataTables-example',
-                                  className: 'form-control input-sm',
-                                  id: 'show'
-                                },
-                                _react2.default.createElement(
-                                  'option',
-                                  { value: '10' },
-                                  '10'
-                                ),
-                                _react2.default.createElement(
-                                  'option',
-                                  { value: '25' },
-                                  '25'
-                                ),
-                                _react2.default.createElement(
-                                  'option',
-                                  { value: '50' },
-                                  '50'
-                                ),
-                                _react2.default.createElement(
-                                  'option',
-                                  { value: '100' },
-                                  '100'
-                                )
-                              ),
-                              'entries'
-                            )
-                          )
-                        ),
-                        _react2.default.createElement(
-                          'div',
-                          { className: 'col-sm-3' },
-                          _react2.default.createElement(
-                            'div',
-                            { id: 'dataTables-example_filter', className: 'dataTables_filter' },
-                            _react2.default.createElement(
-                              'label',
-                              { htmlFor: 'search' },
-                              'Search:',
-                              _react2.default.createElement('input', {
-                                type: 'search',
-                                className: 'form-control input-sm',
-                                placeholder: '',
-                                'aria-controls': 'dataTables-example',
-                                id: 'search'
-  
-                              })
-                            )
-                          )
-                        )
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                          'div',
-                          { className: 'col-sm-12' },
-                          _react2.default.createElement(
-                            'table',
-                            {
-                              className: 'table table-striped table-bordered table-hover dataTable no-footer',
-                              id: 'dataTables-example',
-                              role: 'grid',
-                              'aria-describedby': 'dataTables-example_info'
-                            },
-                            _react2.default.createElement(
-                              'thead',
-                              null,
-                              _react2.default.createElement(
-                                'tr',
-                                { role: 'row' },
-                                _react2.default.createElement(
-                                  'th',
-                                  {
-                                    className: 'sorting_asc',
-                                    tabIndex: '0',
-                                    'aria-controls': 'dataTables-example',
-                                    rowSpan: '1',
-                                    colSpan: '1',
-                                    'aria-label': 'Rendering engine: activate to sort column descending',
-                                    'aria-sort': 'ascending',
-                                    style: { width: 265 }
-                                  },
-                                  'No'
-                                ),
-                                _react2.default.createElement(
-                                  'th',
-                                  {
-                                    className: 'sorting',
-                                    tabIndex: '0',
-                                    'aria-controls': 'dataTables-example',
-                                    rowSpan: '1',
-                                    colSpan: '1',
-                                    'aria-label': 'Browser: activate to sort column ascending',
-                                    style: { width: 321 }
-                                  },
-                                  'Message'
-                                ),
-                                _react2.default.createElement(
-                                  'th',
-                                  {
-                                    className: 'sorting',
-                                    tabIndex: '0',
-                                    'aria-controls': 'dataTables-example',
-                                    rowSpan: '1',
-                                    colSpan: '1',
-                                    'aria-label': 'Platform(s): activate to sort column ascending',
-                                    style: { width: 299 }
-                                  },
-                                  'Source'
-                                ),
-                                _react2.default.createElement(
-                                  'th',
-                                  {
-                                    className: 'sorting',
-                                    tabIndex: '0',
-                                    'aria-controls': 'dataTables-example',
-                                    rowSpan: '1',
-                                    colSpan: '1',
-                                    'aria-label': 'Engine version: activate to sort column ascending',
-                                    style: { width: 231 }
-                                  },
-                                  'Conf +/-'
-                                ),
-                                _react2.default.createElement(
-                                  'th',
-                                  {
-                                    className: 'sorting',
-                                    tabIndex: '0',
-                                    'aria-controls': 'dataTables-example',
-                                    rowSpan: '1',
-                                    colSpan: '1',
-                                    'aria-label': 'CSS grade: activate to sort column ascending',
-                                    style: { width: 180 }
-                                  },
-                                  'Label'
-                                )
-                              )
-                            ),
-                            _react2.default.createElement(
-                              'tbody',
-                              null,
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA odd', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Firefox 1.0'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 98+ / OSX.2+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.7'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA even', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Firefox 1.5'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 98+ / OSX.2+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.8'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA odd', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Firefox 2.0'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 98+ / OSX.2+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.8'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA even', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Firefox 3.0'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 2k+ / OSX.3+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.9'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA odd', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Camino 1.0'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'OSX.2+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.8'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA even', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Camino 1.5'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'OSX.3+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.8'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA odd', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Netscape 7.2'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 95+ / Mac OS 8.6-9.2'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.7'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA even', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Netscape Browser 8'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 98SE+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.7'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA odd', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Netscape Navigator 9'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 98+ / OSX.2+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1.8'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'tr',
-                                { className: 'gradeA even', role: 'row' },
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'sorting_1' },
-                                  'Gecko'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Mozilla 1.0'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  null,
-                                  'Win 95+ / OSX.1+'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  '1'
-                                ),
-                                _react2.default.createElement(
-                                  'td',
-                                  { className: 'center' },
-                                  'A'
-                                )
-                              )
-                            )
-                          )
-                        )
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                          'div',
-                          { className: 'col-lg-12', style: style },
-                          _react2.default.createElement(_reactBootstrap.Pagination, {
-                            activePage: 1,
-                            items: 6,
-                            first: true,
-                            last: true,
-                            prev: true,
-                            next: true,
-                            onSelect: function onSelect() {
-                              // function for Pagination
-                            }
-                          })
-                        )
-                      )
-                    )
-                  )
-                )
-              )
+              _react2.default.createElement(_frequencyTable2.default, null)
             )
           )
         ),
@@ -30738,10 +30248,10 @@ module.exports =
           _this.setKeyWord = function (e) {
               _this.setState({
                   keyword: e.target.value
+  
               });
           };
   
-          console.log(_this.props, "constructor");
           _this.state = {
               keyword: '',
               keyWordErrorText: '',
@@ -30755,11 +30265,13 @@ module.exports =
           value: function componentDidMount() {
               (0, _frequencyService2.default)();
               // this.getConfidentialValue();
+              // console.log(getConfidentialValue());
           }
       }, {
           key: 'submitKeyword',
           value: function submitKeyword(e, val) {
               (0, _frequencyService2.default)(this.state.keyword);
+              console.log(this.state.keyword);
           }
       }, {
           key: 'render',
@@ -30960,6 +30472,309 @@ module.exports =
   'use strict';
   
   Object.defineProperty(exports, "__esModule", {
+      value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _frequencyService = __webpack_require__(190);
+  
+  var _frequencyService2 = _interopRequireDefault(_frequencyService);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var style = {
+      textAlign: 'right'
+  };
+  
+  var FrequencyTableComp = function (_Component) {
+      (0, _inherits3.default)(FrequencyTableComp, _Component);
+  
+      function FrequencyTableComp(props) {
+          (0, _classCallCheck3.default)(this, FrequencyTableComp);
+  
+          var _this = (0, _possibleConstructorReturn3.default)(this, (FrequencyTableComp.__proto__ || (0, _getPrototypeOf2.default)(FrequencyTableComp)).call(this, props));
+  
+          _this.state = {
+              Label: '',
+              Sentence: '',
+              negativeResult: '',
+              positiveResult: '',
+              testVal: [],
+              isDisabled: true
+          };
+          return _this;
+      }
+  
+      (0, _createClass3.default)(FrequencyTableComp, [{
+          key: 'componentDidMount',
+          value: function componentDidMount() {
+              (0, _frequencyService2.default)(keyword);
+              console.log(this.getConfidentialValue());
+              // this.state.Label
+              // // this.getConfidentialValue();
+              // console.log(this.getConfidentialValue());
+          }
+      }, {
+          key: 'retrieveConfidential',
+          value: function retrieveConfidential(val) {
+              (0, _frequencyService2.default)(this.state.Label);
+          }
+      }, {
+          key: 'render',
+          value: function render() {
+              return _react2.default.createElement(
+                  _reactBootstrap.Panel,
+                  { header: _react2.default.createElement(
+                          'span',
+                          null,
+                          'Data Table'
+                      ) },
+                  _react2.default.createElement(
+                      'div',
+                      null,
+                      _react2.default.createElement(
+                          'div',
+                          { className: 'dataTable_wrapper' },
+                          _react2.default.createElement(
+                              'div',
+                              {
+                                  id: 'dataTables-example_wrapper',
+                                  className: 'dataTables_wrapper form-inline dt-bootstrap no-footer'
+                              },
+                              _react2.default.createElement(
+                                  'div',
+                                  { className: 'row' },
+                                  _react2.default.createElement(
+                                      'div',
+                                      { className: 'col-sm-9' },
+                                      _react2.default.createElement(
+                                          'div',
+                                          { className: 'dataTables_length', id: 'dataTables-example_length' },
+                                          _react2.default.createElement(
+                                              'label',
+                                              { htmlFor: 'show' },
+                                              ' Show',
+                                              _react2.default.createElement(
+                                                  'select',
+                                                  {
+                                                      name: 'dataTables-example_length',
+                                                      'aria-controls': 'dataTables-example',
+                                                      className: 'form-control input-sm',
+                                                      id: 'show'
+                                                  },
+                                                  _react2.default.createElement(
+                                                      'option',
+                                                      { value: '10' },
+                                                      '10'
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'option',
+                                                      { value: '25' },
+                                                      '25'
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'option',
+                                                      { value: '50' },
+                                                      '50'
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'option',
+                                                      { value: '100' },
+                                                      '100'
+                                                  )
+                                              ),
+                                              'entries'
+                                          )
+                                      )
+                                  ),
+                                  _react2.default.createElement(
+                                      'div',
+                                      { className: 'col-sm-3' },
+                                      _react2.default.createElement(
+                                          'div',
+                                          { id: 'dataTables-example_filter', className: 'dataTables_filter' },
+                                          _react2.default.createElement(
+                                              'label',
+                                              { htmlFor: 'search' },
+                                              'Search:',
+                                              _react2.default.createElement('input', {
+                                                  type: 'search',
+                                                  className: 'form-control input-sm',
+                                                  placeholder: '',
+                                                  'aria-controls': 'dataTables-example',
+                                                  id: 'search'
+  
+                                              })
+                                          )
+                                      )
+                                  )
+                              ),
+                              _react2.default.createElement(
+                                  'div',
+                                  { className: 'row' },
+                                  _react2.default.createElement(
+                                      'div',
+                                      { className: 'col-sm-12' },
+                                      _react2.default.createElement(
+                                          'table',
+                                          {
+                                              className: 'table table-striped table-bordered table-hover dataTable no-footer',
+                                              id: 'dataTables-example',
+                                              role: 'grid',
+                                              'aria-describedby': 'dataTables-example_info'
+                                          },
+                                          _react2.default.createElement(
+                                              'thead',
+                                              null,
+                                              _react2.default.createElement(
+                                                  'tr',
+                                                  { role: 'row' },
+                                                  _react2.default.createElement(
+                                                      'th',
+                                                      {
+                                                          className: 'sorting_asc',
+                                                          tabIndex: '0',
+                                                          'aria-controls': 'dataTables-example',
+                                                          rowSpan: '1',
+                                                          colSpan: '1',
+                                                          'aria-label': 'Rendering engine: activate to sort column descending',
+                                                          'aria-sort': 'ascending',
+                                                          style: { width: 265 }
+                                                      },
+                                                      'No'
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'th',
+                                                      {
+                                                          className: 'sorting',
+                                                          tabIndex: '0',
+                                                          'aria-controls': 'dataTables-example',
+                                                          rowSpan: '1',
+                                                          colSpan: '1',
+                                                          'aria-label': 'Browser: activate to sort column ascending',
+                                                          style: { width: 321 }
+                                                      },
+                                                      'Message'
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'th',
+                                                      {
+                                                          className: 'sorting',
+                                                          tabIndex: '0',
+                                                          'aria-controls': 'dataTables-example',
+                                                          rowSpan: '1',
+                                                          colSpan: '1',
+                                                          'aria-label': 'Platform(s): activate to sort column ascending',
+                                                          style: { width: 299 }
+                                                      },
+                                                      'Source'
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'th',
+                                                      {
+                                                          className: 'sorting',
+                                                          tabIndex: '0',
+                                                          'aria-controls': 'dataTables-example',
+                                                          rowSpan: '1',
+                                                          colSpan: '1',
+                                                          'aria-label': 'Engine version: activate to sort column ascending',
+                                                          style: { width: 231 }
+                                                      },
+                                                      'Conf +/-'
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'th',
+                                                      {
+                                                          className: 'sorting',
+                                                          tabIndex: '0',
+                                                          'aria-controls': 'dataTables-example',
+                                                          rowSpan: '1',
+                                                          colSpan: '1',
+                                                          'aria-label': 'CSS grade: activate to sort column ascending',
+                                                          style: { width: 180 }
+                                                      },
+                                                      'Label'
+                                                  )
+                                              )
+                                          ),
+                                          _react2.default.createElement(
+                                              'tbody',
+                                              null,
+                                              _react2.default.createElement(
+                                                  'tr',
+                                                  { className: 'gradeA odd', role: 'row' },
+                                                  _react2.default.createElement(
+                                                      'td',
+                                                      { className: 'sorting_1' },
+                                                      this.state.Label
+                                                  )
+                                              )
+                                          )
+                                      )
+                                  )
+                              ),
+                              _react2.default.createElement(
+                                  'div',
+                                  { className: 'row' },
+                                  _react2.default.createElement(
+                                      'div',
+                                      { className: 'col-lg-12', style: style },
+                                      _react2.default.createElement(_reactBootstrap.Pagination, {
+                                          activePage: 1,
+                                          items: 1,
+                                          first: true,
+                                          last: true,
+                                          prev: true,
+                                          next: true,
+                                          onSelect: function onSelect() {
+                                              // function for Pagination
+                                          }
+                                      })
+                                  )
+                              )
+                          )
+                      )
+                  )
+              );
+          }
+      }]);
+      return FrequencyTableComp;
+  }(_react.Component);
+  
+  exports.default = FrequencyTableComp;
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
   
@@ -30967,7 +30782,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _associatePage = __webpack_require__(194);
+  var _associatePage = __webpack_require__(195);
   
   var _associatePage2 = _interopRequireDefault(_associatePage);
   
@@ -30984,7 +30799,7 @@ module.exports =
   };
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -31218,7 +31033,7 @@ module.exports =
   exports.default = AssociateAnalytic;
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -31267,7 +31082,7 @@ module.exports =
       */
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports) {
 
   module.exports = require("./assets");

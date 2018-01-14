@@ -13,6 +13,7 @@ export default function getConfidentialValue (keyword) {
             console.log(result, 'Result data');
         })
         .then(()=> history.push('/frequencyAnalytic'))
+        
 .catch(function(error) {
     console.log(error);
 }); 

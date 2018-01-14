@@ -18,7 +18,6 @@ import FormControlFeedback from 'react-bootstrap/lib/FormControlFeedback';
 class FrequencyFormComp extends Component {
     constructor(props){
         super(props);
-        console.log(this.props, "constructor");
         this.state = {
            keyword: '',
            keyWordErrorText:'',
@@ -29,13 +28,17 @@ class FrequencyFormComp extends Component {
   componentDidMount(){
     getConfidentialValue()
     // this.getConfidentialValue();
+    // console.log(getConfidentialValue());
   }
   submitKeyword(e, val) {
     getConfidentialValue(this.state.keyword);
+    console.log(this.state.keyword);
+    
   }
   setKeyWord = (e) => {
       this.setState({
         keyword: e.target.value
+        
       })
   }
   render() {
