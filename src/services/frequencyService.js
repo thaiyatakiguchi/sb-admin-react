@@ -8,13 +8,10 @@ export default function getConfidentialValue (keyword) {
     fetch(url)
         .then((resp) => resp.json())
         .then(function(data) {
-            console.log('result')
             let result = data;
-            console.log(result, 'Result data');
+            console.log(result, "from service");
+            return result;
+            console.log(result);
         })
-        .then(()=> history.push('/frequencyAnalytic'))
-        
-.catch(function(error) {
-    console.log(error);
-}); 
+        // .then(()=> history.push('/frequencyAnalytic'))
 }

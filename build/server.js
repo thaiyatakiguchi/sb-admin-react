@@ -29784,6 +29784,26 @@ module.exports =
     value: true
   });
   
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
   var _react = __webpack_require__(11);
   
   var _react2 = _interopRequireDefault(_react);
@@ -29831,208 +29851,232 @@ module.exports =
   
   var pieData = [{ name: 'Facebook', abac: 4000, amt: 2400, value: 1500 }, { name: 'Twitter', abac: 4000, amt: 2400, value: 600 }, { name: 'Pantip', abac: 4000, amt: 2400, value: 510 }, { name: 'Others', abac: 4000, amt: 2400, value: 118 }];
   
-  function FrequencyAnalytic(props, context) {
-    context.setTitle(title);
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'div',
-        { className: 'row' },
-        _react2.default.createElement(
+  var FrequencyAnalytic = function (_Component) {
+    (0, _inherits3.default)(FrequencyAnalytic, _Component);
+  
+    function FrequencyAnalytic(props) {
+      (0, _classCallCheck3.default)(this, FrequencyAnalytic);
+  
+      var _this = (0, _possibleConstructorReturn3.default)(this, (FrequencyAnalytic.__proto__ || (0, _getPrototypeOf2.default)(FrequencyAnalytic)).call(this, props));
+  
+      _this.getKeyWord = function (val) {
+        _this.setState({ keyword: val });
+      };
+  
+      _this.state = {
+        keyword: '',
+        keyWordErrorText: '',
+        isDisabled: true
+      };
+      return _this;
+    }
+  
+    (0, _createClass3.default)(FrequencyAnalytic, [{
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
           'div',
-          { className: 'col-lg-12' },
-          _react2.default.createElement(
-            _reactBootstrap.PageHeader,
-            null,
-            'Frequency Analysis'
-          )
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'row' },
-        _react2.default.createElement(
-          'div',
-          { className: 'col-lg-12 col-md-12' },
-          _react2.default.createElement(_frequencyForm2.default, null)
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'row' },
-        _react2.default.createElement(
-          'div',
-          { className: 'col-lg-8' },
+          null,
           _react2.default.createElement(
             'div',
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-12' },
-              _react2.default.createElement(_frequencyLineChart2.default, null),
-              _react2.default.createElement(_frequencyTable2.default, null)
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'col-lg-4' },
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-12' },
+              { className: 'col-lg-12' },
               _react2.default.createElement(
-                _reactBootstrap.Panel,
-                { header: _react2.default.createElement(
-                    'span',
-                    null,
-                    'Sources'
-                  ) },
+                _reactBootstrap.PageHeader,
+                null,
+                'Frequency Analysis'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-lg-12 col-md-12' },
+              _react2.default.createElement(_frequencyForm2.default, { callbackFromParent: this.getKeyWord })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-lg-8' },
+              _react2.default.createElement(
+                'div',
+                { className: 'row' },
                 _react2.default.createElement(
                   'div',
-                  null,
-                  _react2.default.createElement(_Donut2.default, { data: pieData, color: '#3b5998', innerRadius: '60', outerRadius: '80' })
+                  { className: 'col-md-12' },
+                  _react2.default.createElement(_frequencyLineChart2.default, null),
+                  _react2.default.createElement(_frequencyTable2.default, { callbackFromParent: this.setKeyWord, keyword: this.state.keyword })
                 )
-              ),
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-lg-4' },
               _react2.default.createElement(
-                _reactBootstrap.Panel,
-                {
-                  header: _react2.default.createElement(
-                    'span',
-                    null,
-                    _react2.default.createElement('i', { className: 'fa fa-exchange fa-fw' }),
-                    ' Associate Terms Panel'
-                  )
-                },
+                'div',
+                { className: 'row' },
                 _react2.default.createElement(
-                  _reactBootstrap.ListGroup,
-                  null,
+                  'div',
+                  { className: 'col-md-12' },
                   _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
+                    _reactBootstrap.Panel,
+                    { header: _react2.default.createElement(
+                        'span',
+                        null,
+                        'Sources'
+                      ) },
                     _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '400'
+                      'div',
+                      null,
+                      _react2.default.createElement(_Donut2.default, { data: pieData, color: '#3b5998', innerRadius: '60', outerRadius: '80' })
                     )
                   ),
                   _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
+                    _reactBootstrap.Panel,
+                    {
+                      header: _react2.default.createElement(
+                        'span',
+                        null,
+                        _react2.default.createElement('i', { className: 'fa fa-exchange fa-fw' }),
+                        ' Associate Terms Panel'
+                      )
+                    },
                     _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '1200'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
+                      _reactBootstrap.ListGroup,
+                      null,
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '400'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '1200'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '27 '
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '43'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '11'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '11'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '10'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '9'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { href: '', onClick: function onClick(e) {
+                            e.preventDefault();
+                          } },
+                        'Lorem',
+                        _react2.default.createElement(
+                          'span',
+                          { className: 'pull-right text-muted small' },
+                          '546'
+                        )
+                      )
+                    ),
                     _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '27 '
-                    )
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '43'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '11'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '11'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '10'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '9'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.ListGroupItem,
-                    { href: '', onClick: function onClick(e) {
-                        e.preventDefault();
-                      } },
-                    'Lorem',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'pull-right text-muted small' },
-                      '546'
+                      _reactBootstrap.Button,
+                      { block: true },
+                      'View All Terms'
                     )
                   )
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Button,
-                  { block: true },
-                  'View All Terms'
                 )
               )
             )
           )
-        )
-      )
-    );
-  }
+        );
+      }
+    }]);
+    return FrequencyAnalytic;
+  }(_react.Component);
   
-  FrequencyAnalytic.contextTypes = { setTitle: _react.PropTypes.func.isRequired };
+  // FrequencyAnalytic.contextTypes = { setTitle: PropTypes.func.isRequired };
   
   exports.default = FrequencyAnalytic;
 
@@ -30181,14 +30225,12 @@ module.exports =
       fetch(url).then(function (resp) {
           return resp.json();
       }).then(function (data) {
-          console.log('result');
           var result = data;
-          console.log(result, 'Result data');
-      }).then(function () {
-          return _history2.default.push('/frequencyAnalytic');
-      }).catch(function (error) {
-          console.log(error);
+          console.log(result, "from service");
+          return result;
+          console.log(result);
       });
+      // .then(()=> history.push('/frequencyAnalytic'))
   }
 
 /***/ }),
@@ -30248,7 +30290,6 @@ module.exports =
           _this.setKeyWord = function (e) {
               _this.setState({
                   keyword: e.target.value
-  
               });
           };
   
@@ -30261,17 +30302,9 @@ module.exports =
       }
   
       (0, _createClass3.default)(FrequencyFormComp, [{
-          key: 'componentDidMount',
-          value: function componentDidMount() {
-              (0, _frequencyService2.default)();
-              // this.getConfidentialValue();
-              // console.log(getConfidentialValue());
-          }
-      }, {
           key: 'submitKeyword',
           value: function submitKeyword(e, val) {
-              (0, _frequencyService2.default)(this.state.keyword);
-              console.log(this.state.keyword);
+              this.props.callbackFromParent(this.state.keyword);
           }
       }, {
           key: 'render',
@@ -30531,18 +30564,23 @@ module.exports =
       }
   
       (0, _createClass3.default)(FrequencyTableComp, [{
-          key: 'componentDidMount',
-          value: function componentDidMount() {
-              (0, _frequencyService2.default)(keyword);
-              console.log(this.getConfidentialValue());
-              // this.state.Label
-              // // this.getConfidentialValue();
-              // console.log(this.getConfidentialValue());
-          }
-      }, {
-          key: 'retrieveConfidential',
-          value: function retrieveConfidential(val) {
-              (0, _frequencyService2.default)(this.state.Label);
+          key: 'componentWillReceiveProps',
+          value: function componentWillReceiveProps(nextProps) {
+              var _this2 = this;
+  
+              console.log(nextProps.keyword);
+              var url = 'http://174.138.26.245:5003/Thai_segment/' + nextProps.keyword;
+              fetch(url).then(function (resp) {
+                  return resp.json();
+              }).then(function (json) {
+                  console.log(json);
+                  _this2.setState({
+                      Label: json.Label,
+                      Sentence: json.Sentence,
+                      negativeResult: json.negativeResult,
+                      positiveResult: json.positiveResult
+                  });
+              });
           }
       }, {
           key: 'render',
@@ -30706,19 +30744,6 @@ module.exports =
                                                           style: { width: 231 }
                                                       },
                                                       'Conf +/-'
-                                                  ),
-                                                  _react2.default.createElement(
-                                                      'th',
-                                                      {
-                                                          className: 'sorting',
-                                                          tabIndex: '0',
-                                                          'aria-controls': 'dataTables-example',
-                                                          rowSpan: '1',
-                                                          colSpan: '1',
-                                                          'aria-label': 'CSS grade: activate to sort column ascending',
-                                                          style: { width: 180 }
-                                                      },
-                                                      'Label'
                                                   )
                                               )
                                           ),
@@ -30732,6 +30757,21 @@ module.exports =
                                                       'td',
                                                       { className: 'sorting_1' },
                                                       this.state.Label
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'td',
+                                                      { className: 'sorting_1' },
+                                                      this.state.Sentence
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'td',
+                                                      { className: 'sorting_1' },
+                                                      this.state.negativeResult
+                                                  ),
+                                                  _react2.default.createElement(
+                                                      'td',
+                                                      { className: 'sorting_1' },
+                                                      this.state.positiveResult
                                                   )
                                               )
                                           )
