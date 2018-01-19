@@ -38,17 +38,22 @@ class FrequencyTableComp extends Component {
         }
     }
 
-    componentDidMount(){
-        getConfidentialValue(keyword)
-        console.log(this.getConfidentialValue());
-        // this.state.Label
-        // // this.getConfidentialValue();
-        // console.log(this.getConfidentialValue());
+    componentWillReceiveProps (nextProps) {
+        console.log(nextProps.keyword)
+        var url = 'http://174.138.26.245:5003/Thai_segment/' + nextProps.keyword;
+        fetch(url)
+            .then(resp  => resp.json())
+            .then(json => {
+                console.log(json)
+                this.setState({
+                    Label: json.Label,
+                    Sentence: json.Sentence,
+                    negativeResult: json.negativeResult,
+                    positiveResult: json.positiveResult
+                })
+            })
     }
-    retrieveConfidential(val){
-        getConfidentialValue(this.state.Label);    
-    }
-
+    
   render() {
     return (
         <Panel header={<span>Data Table</span>} >
@@ -149,21 +154,14 @@ class FrequencyTableComp extends Component {
                                 >
                                 Conf +/-
                                 </th>
-                                <th
-                                className="sorting"
-                                tabIndex="0"
-                                aria-controls="dataTables-example"
-                                rowSpan="1"
-                                colSpan="1"
-                                aria-label="CSS grade: activate to sort column ascending"
-                                style={{ width: 180 }}
-                                >Label
-                                </th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr className="gradeA odd" role="row">
                                 <td className="sorting_1">{this.state.Label}</td>
+                                <td className="sorting_1">{this.state.Sentence}</td>
+                                <td className="sorting_1">{this.state.negativeResult}</td>
+                                <td className="sorting_1">{this.state.positiveResult}</td>
                                 {/* <td>{Label}</td>
                                 <td>negativeResult</td>
                                 <td className="center">{positiveResult}</td>

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import {
   MenuItem,
@@ -63,8 +63,22 @@ import {
     { name: 'Others', abac: 4000,  amt: 2400, value: 118,},
   ];
 
-  function FrequencyAnalytic(props, context) {
-    context.setTitle(title);
+  class FrequencyAnalytic extends Component {
+
+    constructor(props){
+      super(props);
+      this.state = {
+        keyword: '',
+        keyWordErrorText: '',
+        isDisabled: true
+      };
+    };
+
+    getKeyWord = (val) => {
+      this.setState({ keyword: val});
+    };
+
+    render() {
     return (
       <div>
         <div className="row">
@@ -75,7 +89,7 @@ import {
   
         <div className="row">
           <div className="col-lg-12 col-md-12">
-            <FrequencyFormComp  />
+            <FrequencyFormComp callbackFromParent={this.getKeyWord}/>
           </div>
         </div>
 
@@ -85,7 +99,7 @@ import {
               <div className="col-md-12">
                 <FrequencyLineChartComp />
                 
-                <FrequencyTableComp/> 
+                <FrequencyTableComp callbackFromParent={this.setKeyWord} keyword={this.state.keyword}/> 
               </div>
             </div>
           </div>
@@ -160,8 +174,9 @@ import {
       
       </div>
     );
+  }
 }
 
-FrequencyAnalytic.contextTypes = { setTitle: PropTypes.func.isRequired };
+// FrequencyAnalytic.contextTypes = { setTitle: PropTypes.func.isRequired };
 
 export default FrequencyAnalytic;
